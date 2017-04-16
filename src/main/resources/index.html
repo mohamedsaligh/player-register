@@ -73,7 +73,7 @@
 								jsonp: false,
 								jsonpCallback: "receive",
 								dataType: 'jsonp',
-								url: "http://localhost:2222/api/home/players/getAll?callback=receive",
+								url: "https://copi2team.herokuapp.com/api/home/players/getAll?callback=receive",
 								async: false,
 								// context: document.body,
 								success: function(data){
@@ -96,7 +96,7 @@
 							$.ajax({
 								 type: "GET",
 								 dataType: 'jsonp',
-								 url: "http://localhost:2222/api/home/hello/" + name,
+								 url: "https://copi2team.herokuapp.com/api/home/hello/" + name,
 								 success: function(data) {
 											var converter = new Markdown.Converter();
 											$("#preview").html(converter.makeHtml(data));
