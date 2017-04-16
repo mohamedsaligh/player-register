@@ -1,1 +1,1 @@
-web:    java -jar target/player-register.jar
+web: java -cp target/classes:target/dependency/* com.scb.cic.App
