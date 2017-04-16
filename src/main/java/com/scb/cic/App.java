@@ -21,11 +21,17 @@ import java.net.URL;
 public class App {
 
     public static void main( String[] args ) throws Exception {
+        String webPort = System.getenv("PORT");
+        if (webPort == null || webPort.isEmpty()) {
+            webPort = "8080";
+        }
+
+        final Server server = new Server(Integer.valueOf(webPort));
+
         ResourceConfig config = new ResourceConfig();
         config.packages("com.scb.cic");
         ServletHolder servlet = new ServletHolder(new ServletContainer(config));
-
-        Server server = new Server(80);
+        
         ServletContextHandler context = new ServletContextHandler(server, "/api/*");
         context.addServlet(servlet, "/*");
         server.setHandler(context);
