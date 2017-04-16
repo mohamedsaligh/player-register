@@ -31,14 +31,14 @@ public class App {
         ResourceConfig config = new ResourceConfig();
         config.packages("com.scb.cic");
         ServletHolder servlet = new ServletHolder(new ServletContainer(config));
-        
+
         ServletContextHandler context = new ServletContextHandler(server, "/api/*");
         context.addServlet(servlet, "/*");
         server.setHandler(context);
 
         // Web
         ResourceHandler webHandler = new ResourceHandler();
-        webHandler.setResourceBase("./");
+        webHandler.setResourceBase("./target/classes/");
         webHandler.setWelcomeFiles(new String[]{"index.html"});
 
         // Server

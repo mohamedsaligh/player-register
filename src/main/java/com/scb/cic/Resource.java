@@ -10,7 +10,7 @@ import java.io.*;
 @Path("/home")
 public class Resource {
 
-    private String DATAFILE = "./data.txt";
+    private String DATAFILE = "./target/classes/data.txt";
 
     @GET
     @Path("/hello/{name}")
