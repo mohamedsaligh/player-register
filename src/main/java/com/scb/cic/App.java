@@ -25,7 +25,7 @@ public class App {
         config.packages("com.scb.cic");
         ServletHolder servlet = new ServletHolder(new ServletContainer(config));
 
-        Server server = new Server(2222);
+        Server server = new Server(80);
         ServletContextHandler context = new ServletContextHandler(server, "/api/*");
         context.addServlet(servlet, "/*");
         server.setHandler(context);
