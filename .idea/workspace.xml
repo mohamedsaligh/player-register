@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70597995-8407-406f-a900-75e774c8475a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/scb/cic/App.class" afterPath="$PROJECT_DIR$/target/classes/com/scb/cic/App.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/scb/cic/Resource.class" afterPath="$PROJECT_DIR$/target/classes/com/scb/cic/Resource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/css/style.css" afterPath="$PROJECT_DIR$/target/classes/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data.txt" afterPath="$PROJECT_DIR$/target/classes/data.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/index.html" afterPath="$PROJECT_DIR$/target/classes/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/js/main.js" afterPath="$PROJECT_DIR$/target/classes/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/index.html" afterPath="$PROJECT_DIR$/src/main/resources/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,20 +40,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-555">
-              <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+            <state relative-caret-position="397">
+              <caret line="129" column="46" lean-forward="false" selection-start-line="129" selection-start-column="46" selection-end-line="129" selection-end-column="46" />
               <folding>
-                <marker date="1492417284000" expanded="false" signature="3692:3704" ph="..." />
-                <marker date="1492417284000" expanded="true" signature="3978:3979" ph="..." />
+                <marker date="1492431873000" expanded="false" signature="3692:3704" ph="..." />
+                <marker date="1492431873000" expanded="true" signature="3978:3979" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/scb/cic/DBConnection.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -134,8 +128,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/scb/cic/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scb/cic/PlayerDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/scb/cic/Resource.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/scb/cic/DBConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/index.html" />
       </list>
     </option>
   </component>
@@ -585,8 +579,8 @@
         <state relative-caret-position="105">
           <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
           <folding>
-            <marker date="1492417284000" expanded="false" signature="3692:3704" ph="..." />
-            <marker date="1492417284000" expanded="true" signature="3978:3979" ph="..." />
+            <marker date="1492431873000" expanded="false" signature="3692:3704" ph="..." />
+            <marker date="1492431873000" expanded="true" signature="3978:3979" ph="..." />
           </folding>
         </state>
       </provider>
@@ -648,8 +642,8 @@
         <state relative-caret-position="105">
           <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
           <folding>
-            <marker date="1492417284000" expanded="false" signature="3692:3704" ph="..." />
-            <marker date="1492417284000" expanded="true" signature="3978:3979" ph="..." />
+            <marker date="1492431873000" expanded="false" signature="3692:3704" ph="..." />
+            <marker date="1492431873000" expanded="true" signature="3978:3979" ph="..." />
           </folding>
         </state>
       </provider>
@@ -709,8 +703,8 @@
         <state relative-caret-position="1470">
           <caret line="98" column="85" lean-forward="false" selection-start-line="98" selection-start-column="85" selection-end-line="98" selection-end-column="85" />
           <folding>
-            <marker date="1492417284000" expanded="false" signature="3692:3704" ph="..." />
-            <marker date="1492417284000" expanded="true" signature="3978:3979" ph="..." />
+            <marker date="1492431873000" expanded="false" signature="3692:3704" ph="..." />
+            <marker date="1492431873000" expanded="true" signature="3978:3979" ph="..." />
           </folding>
         </state>
       </provider>
@@ -766,8 +760,8 @@
         <state relative-caret-position="1470">
           <caret line="98" column="85" lean-forward="false" selection-start-line="98" selection-start-column="85" selection-end-line="98" selection-end-column="85" />
           <folding>
-            <marker date="1492417284000" expanded="false" signature="3692:3704" ph="..." />
-            <marker date="1492417284000" expanded="true" signature="3978:3979" ph="..." />
+            <marker date="1492431873000" expanded="false" signature="3692:3704" ph="..." />
+            <marker date="1492431873000" expanded="true" signature="3978:3979" ph="..." />
           </folding>
         </state>
       </provider>
@@ -847,17 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-555">
-          <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding>
-            <marker date="1492417284000" expanded="false" signature="3692:3704" ph="..." />
-            <marker date="1492417284000" expanded="true" signature="3978:3979" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/scb/cic/PlayerDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -882,6 +865,17 @@
           <caret line="12" column="59" lean-forward="false" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="129" column="46" lean-forward="false" selection-start-line="129" selection-start-column="46" selection-end-line="129" selection-end-column="46" />
+          <folding>
+            <marker date="1492431873000" expanded="false" signature="3692:3704" ph="..." />
+            <marker date="1492431873000" expanded="true" signature="3978:3979" ph="..." />
           </folding>
         </state>
       </provider>
