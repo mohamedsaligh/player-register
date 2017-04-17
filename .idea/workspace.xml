@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70597995-8407-406f-a900-75e774c8475a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__postgresql_postgresql_9_1_901_1_jdbc4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/scb/cic/DBConnection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/player-register.iml" afterPath="$PROJECT_DIR$/player-register.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/scb/cic/App.java" afterPath="$PROJECT_DIR$/src/main/java/com/scb/cic/App.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +21,8 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/scb/cic/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="435">
+              <caret line="52" column="57" lean-forward="false" selection-start-line="52" selection-start-column="57" selection-end-line="52" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -101,13 +97,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Procfile" />
-        <option value="$PROJECT_DIR$/src/main/java/com/scb/cic/App.java" />
         <option value="$PROJECT_DIR$/src/main/resources/js/main.js" />
         <option value="$PROJECT_DIR$/src/main/resources/data.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/scb/cic/Resource.java" />
         <option value="$PROJECT_DIR$/src/main/resources/index.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/scb/cic/DBConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/scb/cic/App.java" />
       </list>
     </option>
   </component>
@@ -688,8 +684,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/scb/cic/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="435">
+          <caret line="52" column="57" lean-forward="false" selection-start-line="52" selection-start-column="57" selection-end-line="52" selection-end-column="57" />
           <folding />
         </state>
       </provider>

@@ -49,6 +49,10 @@ public class App {
         server.setHandler(handlers);
         server.start();
 
+        //DBConnection
+        System.out.println("Going to get DB Connection...");
+        DBConnection.getConnection();
+
         try {
             server.start();
             server.join();
