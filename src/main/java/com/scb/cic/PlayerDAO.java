@@ -2,6 +2,10 @@ package com.scb.cic;
 
 import java.net.URISyntaxException;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by saligh on 17/4/17.
@@ -27,7 +31,6 @@ public class PlayerDAO {
             c.close();
         } catch ( Exception e ) {
             System.err.println( e.getClass().getName()+": "+ e.getMessage() );
-            System.exit(0);
         } finally {
             DBConnection.closeResources(null, stmt, c);
         }
@@ -35,6 +38,60 @@ public class PlayerDAO {
 
         checkAllTables(null);
         System.out.println("Player_Info table checked");
+    }
+
+    public List<Map<String, String>> getAllPlayers() {
+
+        List<Map<String, String>> playersList = new ArrayList<>();
+        Map<String, String> playerDetailsMap = null;
+
+        Connection con = null;
+        ResultSet rs = null;
+        PreparedStatement pstmt = null;
+        String getPlayersSql = "Select * From PLAYER_INFO ";
+        try {
+
+            con = DBConnection.getConnection();
+            pstmt = con.prepareStatement(getPlayersSql);
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+
+                playerDetailsMap = new HashMap<>();
+                playerDetailsMap.put("NAME", rs.getString("NAME"));
+                playerDetailsMap.put("SKILL", rs.getString("SKILL"));
+                playerDetailsMap.put("TEAM", rs.getString("TEAM"));
+
+                playersList.add(playerDetailsMap);
+            }
+        } catch ( Exception e ) {
+            System.err.println( e.getClass().getName()+": "+ e.getMessage() );
+        } finally {
+            DBConnection.closeResources(rs, pstmt, con);
+        }
+        System.out.println("playersList: \n" + playersList);
+        return playersList;
+    }
+
+    public void insertPlayer(String name, String skill, String team) {
+
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        String playerInsSql = "Insert into PLAYER_INFO (name, skill, team) values (?, ?, ?)";
+        try {
+
+            con = DBConnection.getConnection();
+            pstmt = con.prepareStatement(playerInsSql);
+            int pstmtIdx = 0;
+            pstmt.setString(++pstmtIdx, name);
+            pstmt.setString(++pstmtIdx, skill);
+            pstmt.setString(++pstmtIdx, team);
+            int insStatus = pstmt.executeUpdate();
+        } catch ( Exception e ) {
+            System.err.println( e.getClass().getName()+": "+ e.getMessage() );
+        } finally {
+            DBConnection.closeResources(null, pstmt, con);
+        }
     }
 
     public void checkAllTables(String tableName) {

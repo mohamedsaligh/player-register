@@ -3,6 +3,8 @@ package com.scb.cic;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.io.*;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by saligh on 4/4/17.
@@ -43,28 +45,51 @@ public class Resource {
     private String getAllData() {
         String line = "";
         String cvsSplitBy = ",";
-        String data = "";
+        StringBuilder data = new StringBuilder("");
         try {
             if (init()) {
 
             } else {
                 int counter = 1;
-                BufferedReader br = new BufferedReader(new FileReader(DATAFILE));
-                while ((line = br.readLine()) != null) {
-                    // use comma as separator
-                    String[] read = line.split(cvsSplitBy);
-                    if ("".equalsIgnoreCase(data)) {
-                        data = data + "{" +
+//                BufferedReader br = new BufferedReader(new FileReader(DATAFILE));
+//                while ((line = br.readLine()) != null) {
+//                    // use comma as separator
+//                    String[] read = line.split(cvsSplitBy);
+//                    if ("".equalsIgnoreCase(data)) {
+//                        data = data + "{" +
+//                                "\"id\":" + "\"" + counter++ +"\"," +
+//                                "\"name\":" + "\"" + read[0] +"\"," +
+//                                "\"role\":" + "\"" + read[1] +"\"," +
+//                                "\"team\":" + "\"" + " " +"\"}";
+//                    } else {
+//                        data = data + ",{" +
+//                                "\"id\":" + "\"" + counter++ +"\"," +
+//                                "\"name\":" + "\"" + read[0] +"\"," +
+//                                "\"role\":" + "\"" + read[1] +"\"," +
+//                                "\"team\":" + "\"" + " " +"\"}";
+//                    }
+//                }
+
+                PlayerDAO playerDAO = new PlayerDAO();
+                List<Map<String, String>> playersList = playerDAO.getAllPlayers();
+                for (Map<String, String> playerDetailsMap : playersList) {
+
+                    String name = playerDetailsMap.get("NAME");
+                    String role = playerDetailsMap.get("SKILL");
+                    String team = playerDetailsMap.get("TEAM");
+
+                    if ((data.length() <= 0)) {
+                        data = data.append("{" +
                                 "\"id\":" + "\"" + counter++ +"\"," +
-                                "\"name\":" + "\"" + read[0] +"\"," +
-                                "\"role\":" + "\"" + read[1] +"\"," +
-                                "\"team\":" + "\"" + " " +"\"}";
+                                "\"name\":" + "\"" + name +"\"," +
+                                "\"role\":" + "\"" + role +"\"," +
+                                "\"team\":" + "\"" + team +"\"}");
                     } else {
-                        data = data + ",{" +
+                        data = data.append(",{" +
                                 "\"id\":" + "\"" + counter++ +"\"," +
-                                "\"name\":" + "\"" + read[0] +"\"," +
-                                "\"role\":" + "\"" + read[1] +"\"," +
-                                "\"team\":" + "\"" + " " +"\"}";
+                                "\"name\":" + "\"" + name +"\"," +
+                                "\"role\":" + "\"" + role +"\"," +
+                                "\"team\":" + "\"" + team +"\"}");
                     }
                 }
                 System.out.println("Response: " + data );
@@ -81,12 +106,15 @@ public class Resource {
             if (init()) {
 
             } else {
-                Writer writer = new BufferedWriter(new OutputStreamWriter(
-                        new FileOutputStream(DATAFILE, true), "UTF-8"));
-                role = role.replace(",", " ");
-                writer.append(name + "," + role + "\n");
-                writer.flush();
-                writer.close();
+//                Writer writer = new BufferedWriter(new OutputStreamWriter(
+//                        new FileOutputStream(DATAFILE, true), "UTF-8"));
+//                role = role.replace(",", " ");
+//                writer.append(name + "," + role + "\n");
+
+                PlayerDAO playerDAO = new PlayerDAO();
+                playerDAO.insertPlayer(name, role, " ");
+//                writer.flush();
+//                writer.close();
             }
         } catch (Exception ex) {
             ex.printStackTrace();

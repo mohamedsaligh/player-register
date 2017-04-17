@@ -60,7 +60,7 @@ public class App {
         }
         PlayerDAO playerDAO = new PlayerDAO();
         playerDAO.checkAllTables(null);
-        playerDAO.createPlayerTable();
+//        playerDAO.createPlayerTable();
 
         try {
             server.start();
