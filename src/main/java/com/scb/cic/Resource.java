@@ -47,9 +47,9 @@ public class Resource {
         String cvsSplitBy = ",";
         StringBuilder data = new StringBuilder("");
         try {
-            if (init()) {
-
-            } else {
+//            if (init()) {
+//
+//            } else {
                 int counter = 1;
 //                BufferedReader br = new BufferedReader(new FileReader(DATAFILE));
 //                while ((line = br.readLine()) != null) {
@@ -93,8 +93,8 @@ public class Resource {
                     }
                 }
                 System.out.println("Response: " + data );
-            }
-        } catch (IOException e) {
+//            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -103,9 +103,9 @@ public class Resource {
 
     private void addPlayer(String name, String role) {
         try {
-            if (init()) {
-
-            } else {
+//            if (init()) {
+//
+//            } else {
 //                Writer writer = new BufferedWriter(new OutputStreamWriter(
 //                        new FileOutputStream(DATAFILE, true), "UTF-8"));
 //                role = role.replace(",", " ");
@@ -115,7 +115,7 @@ public class Resource {
                 playerDAO.insertPlayer(name, role, " ");
 //                writer.flush();
 //                writer.close();
-            }
+//            }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
