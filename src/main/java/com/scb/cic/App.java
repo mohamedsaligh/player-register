@@ -58,6 +58,8 @@ public class App {
         } finally {
             DBConnection.closeResources(null, null, dbConn);
         }
+        PlayerDAO playerDAO = new PlayerDAO();
+        playerDAO.checkAllTables();
 
         try {
             server.start();
