@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70597995-8407-406f-a900-75e774c8475a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/index.html" afterPath="$PROJECT_DIR$/src/main/resources/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,10 +42,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="337">
-              <caret line="128" column="112" lean-forward="false" selection-start-line="128" selection-start-column="112" selection-end-line="128" selection-end-column="112" />
+              <caret line="128" column="101" lean-forward="true" selection-start-line="128" selection-start-column="101" selection-end-line="128" selection-end-column="101" />
               <folding>
-                <marker date="1492405936000" expanded="false" signature="3727:3739" ph="..." />
-                <marker date="1492405936000" expanded="true" signature="4013:4014" ph="..." />
+                <marker date="1492406173000" expanded="false" signature="3727:3739" ph="..." />
+                <marker date="1492406173000" expanded="true" signature="4013:4014" ph="..." />
               </folding>
             </state>
           </provider>
@@ -502,8 +501,8 @@
         <state relative-caret-position="1470">
           <caret line="98" column="85" lean-forward="false" selection-start-line="98" selection-start-column="85" selection-end-line="98" selection-end-column="85" />
           <folding>
-            <marker date="1492405936000" expanded="false" signature="3727:3739" ph="..." />
-            <marker date="1492405936000" expanded="true" signature="4013:4014" ph="..." />
+            <marker date="1492406173000" expanded="false" signature="3727:3739" ph="..." />
+            <marker date="1492406173000" expanded="true" signature="4013:4014" ph="..." />
           </folding>
         </state>
       </provider>
@@ -561,8 +560,8 @@
         <state relative-caret-position="1470">
           <caret line="98" column="85" lean-forward="false" selection-start-line="98" selection-start-column="85" selection-end-line="98" selection-end-column="85" />
           <folding>
-            <marker date="1492405936000" expanded="false" signature="3727:3739" ph="..." />
-            <marker date="1492405936000" expanded="true" signature="4013:4014" ph="..." />
+            <marker date="1492406173000" expanded="false" signature="3727:3739" ph="..." />
+            <marker date="1492406173000" expanded="true" signature="4013:4014" ph="..." />
           </folding>
         </state>
       </provider>
@@ -657,10 +656,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
-          <caret line="128" column="112" lean-forward="false" selection-start-line="128" selection-start-column="112" selection-end-line="128" selection-end-column="112" />
+          <caret line="128" column="101" lean-forward="true" selection-start-line="128" selection-start-column="101" selection-end-line="128" selection-end-column="101" />
           <folding>
-            <marker date="1492405936000" expanded="false" signature="3727:3739" ph="..." />
-            <marker date="1492405936000" expanded="true" signature="4013:4014" ph="..." />
+            <marker date="1492406173000" expanded="false" signature="3727:3739" ph="..." />
+            <marker date="1492406173000" expanded="true" signature="4013:4014" ph="..." />
           </folding>
         </state>
       </provider>
