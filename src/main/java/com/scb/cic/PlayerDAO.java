@@ -31,9 +31,9 @@ public class PlayerDAO {
         } finally {
             DBConnection.closeResources(null, stmt, c);
         }
-        System.out.println("Table created successfully");
+        System.out.println("PLAYER_INFO Table created successfully");
 
-        checkAllTables("PLAYER_INFO");
+        checkAllTables(null);
         System.out.println("Player_Info table checked");
     }
 
@@ -61,15 +61,17 @@ public class PlayerDAO {
             int totalCols = rsmd.getColumnCount();
             System.out.println("Printing Column Names...");
             for (int col=1;col<totalCols;col++) {
-                System.out.println(rsmd.getColumnLabel(col));
+                System.out.print(rsmd.getColumnLabel(col) + "\t");
             }
+            System.out.println();
             System.out.println("TotalColumns: " + totalCols);
             while (rs.next()) {
 
                 for (int colIdx=1 ; colIdx<=totalCols ; colIdx++) {
 
-                    System.out.println("Column [" + colIdx + "] Value: " + rs.getString(colIdx));
+                    System.out.print("[" + rsmd.getColumnLabel(colIdx) + "]: " + rs.getString(colIdx) + "|");
                 }
+                System.out.println();
             }
         } catch (URISyntaxException e) {
             e.printStackTrace();
