@@ -45,6 +45,7 @@ public class Resource {
         String cvsSplitBy = ",";
         String data = "";
         try {
+            init();
             int counter = 1;
             BufferedReader br = new BufferedReader(new FileReader(DATAFILE));
             while ((line = br.readLine()) != null) {
@@ -75,6 +76,7 @@ public class Resource {
 
     private void addPlayer(String name, String role) {
         try {
+            init();
             Writer writer = new BufferedWriter(new OutputStreamWriter(
                     new FileOutputStream(DATAFILE, true), "UTF-8"));
             role = role.replace(",", " ");
@@ -83,6 +85,17 @@ public class Resource {
             writer.close();
         } catch (Exception ex) {
             ex.printStackTrace();
+        }
+    }
+
+    private void init() throws IOException {
+        File datafile = new File(DATAFILE);
+        if(datafile.createNewFile()) {
+            Writer writer = new BufferedWriter(new OutputStreamWriter(
+                    new FileOutputStream(DATAFILE, true), "UTF-8"));
+            writer.append("\n");
+            writer.flush();
+            writer.close();
         }
     }
 
