@@ -59,7 +59,8 @@ public class App {
             DBConnection.closeResources(null, null, dbConn);
         }
         PlayerDAO playerDAO = new PlayerDAO();
-        playerDAO.checkAllTables();
+        playerDAO.checkAllTables(null);
+        playerDAO.createPlayerTable();
 
         try {
             server.start();
