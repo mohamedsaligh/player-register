@@ -13,6 +13,7 @@ import sun.applet.Main;
 
 import java.net.URI;
 import java.net.URL;
+import java.sql.Connection;
 
 /**
  * Hello world!
@@ -50,8 +51,13 @@ public class App {
         server.start();
 
         //DBConnection
-        System.out.println("Going to get DB Connection...");
-        DBConnection.getConnection();
+        Connection dbConn = null;
+        try {
+            System.out.println("Going to get DB Connection...");
+            dbConn = DBConnection.getConnection();
+        } finally {
+            DBConnection.closeResources(null, null, dbConn);
+        }
 
         try {
             server.start();

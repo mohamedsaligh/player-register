@@ -2,9 +2,7 @@ package com.scb.cic;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  * Created by saligh on 17/4/17.
@@ -26,4 +24,31 @@ public class DBConnection {
         return DriverManager.getConnection(dbUrl, username, password);
     }
 
+    public static void closeResources(ResultSet rs, Statement stmt, Connection con) {
+
+        try {
+            if (rs != null) {
+
+                rs.close();
+            }
+        } catch(Exception ex) {
+            System.err.println("Exception in closing ResultSet: " + ex);
+        }
+        try {
+            if (stmt != null) {
+
+                stmt.close();
+            }
+        } catch(Exception ex) {
+            System.err.println("Exception in closing Statement: " + ex);
+        }
+        try {
+            if (con != null && !con.isClosed()) {
+
+                con.close();
+            }
+        } catch(Exception ex) {
+            System.err.println("Exception in closing connection: " + ex);
+        }
+    }
 }
