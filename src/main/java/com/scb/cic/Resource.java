@@ -45,28 +45,30 @@ public class Resource {
         String cvsSplitBy = ",";
         String data = "";
         try {
-            init();
-            int counter = 1;
-            BufferedReader br = new BufferedReader(new FileReader(DATAFILE));
-            while ((line = br.readLine()) != null) {
-                // use comma as separator
-                String[] read = line.split(cvsSplitBy);
-                if ("".equalsIgnoreCase(data)) {
-                    data = data + "{" +
-                            "\"id\":" + "\"" + counter++ +"\"," +
-                            "\"name\":" + "\"" + read[0] +"\"," +
-                            "\"role\":" + "\"" + read[1] +"\"," +
-                            "\"team\":" + "\"" + " " +"\"}";
-                } else {
-                    data = data + ",{" +
-                            "\"id\":" + "\"" + counter++ +"\"," +
-                            "\"name\":" + "\"" + read[0] +"\"," +
-                            "\"role\":" + "\"" + read[1] +"\"," +
-                            "\"team\":" + "\"" + " " +"\"}";
-                }
-            }
-            System.out.println("Response: " + data );
+            if (init()) {
 
+            } else {
+                int counter = 1;
+                BufferedReader br = new BufferedReader(new FileReader(DATAFILE));
+                while ((line = br.readLine()) != null) {
+                    // use comma as separator
+                    String[] read = line.split(cvsSplitBy);
+                    if ("".equalsIgnoreCase(data)) {
+                        data = data + "{" +
+                                "\"id\":" + "\"" + counter++ +"\"," +
+                                "\"name\":" + "\"" + read[0] +"\"," +
+                                "\"role\":" + "\"" + read[1] +"\"," +
+                                "\"team\":" + "\"" + " " +"\"}";
+                    } else {
+                        data = data + ",{" +
+                                "\"id\":" + "\"" + counter++ +"\"," +
+                                "\"name\":" + "\"" + read[0] +"\"," +
+                                "\"role\":" + "\"" + read[1] +"\"," +
+                                "\"team\":" + "\"" + " " +"\"}";
+                    }
+                }
+                System.out.println("Response: " + data );
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -76,27 +78,24 @@ public class Resource {
 
     private void addPlayer(String name, String role) {
         try {
-            init();
-            Writer writer = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(DATAFILE, true), "UTF-8"));
-            role = role.replace(",", " ");
-            writer.append(name + "," + role + "\n");
-            writer.flush();
-            writer.close();
+            if (init()) {
+
+            } else {
+                Writer writer = new BufferedWriter(new OutputStreamWriter(
+                        new FileOutputStream(DATAFILE, true), "UTF-8"));
+                role = role.replace(",", " ");
+                writer.append(name + "," + role + "\n");
+                writer.flush();
+                writer.close();
+            }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
-    private void init() throws IOException {
+    private boolean init() throws IOException {
         File datafile = new File(DATAFILE);
-        if(datafile.createNewFile()) {
-            Writer writer = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(DATAFILE, true), "UTF-8"));
-            writer.append("\n");
-            writer.flush();
-            writer.close();
-        }
+        return datafile.createNewFile();
     }
 
 }
