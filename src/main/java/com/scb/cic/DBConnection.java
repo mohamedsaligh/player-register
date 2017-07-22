@@ -11,6 +11,18 @@ import java.sql.*;
 public class DBConnection {
 
     public static Connection getConnection() throws URISyntaxException, SQLException {
+        return getMySQLConnection();
+        //return getPostgresConnection();
+    }
+
+    private static Connection getMySQLConnection() throws URISyntaxException, SQLException {
+        String dbUrl = "jdbc:mysql://localhost:8889/localdb";
+        String username = "root";
+        String password = "root";
+        return DriverManager.getConnection(dbUrl, username, password);
+    }
+
+    private static Connection getPostgresConnection() throws URISyntaxException, SQLException {
         URI dbUri = new URI(System.getenv("DATABASE_URL"));
         System.out.println("DATABASE_URL: " + dbUri.getHost() + "|" + dbUri.getPort());
         System.out.println("DATABASE_URL from System env: " + System.getenv("DATABASE_URL"));

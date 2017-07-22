@@ -43,44 +43,14 @@ public class Resource {
 
 
     private String getAllData() {
-        StringBuilder data = new StringBuilder("");
-        try {
-
-            int counter = 1;
-            PlayerDAO playerDAO = new PlayerDAO();
-            List<Map<String, String>> playersList = playerDAO.getAllPlayers();
-            for (Map<String, String> playerDetailsMap : playersList) {
-
-                String name = playerDetailsMap.get("NAME");
-                String role = playerDetailsMap.get("SKILL");
-                String team = playerDetailsMap.get("TEAM");
-
-                if ((data.length() <= 0)) {
-                    data = data.append("{" +
-                            "\"id\":" + "\"" + counter++ + "\"," +
-                            "\"name\":" + "\"" + name + "\"," +
-                            "\"role\":" + "\"" + role + "\"," +
-                            "\"team\":" + "\"" + team + "\"}");
-                } else {
-                    data = data.append(",{" +
-                            "\"id\":" + "\"" + counter++ + "\"," +
-                            "\"name\":" + "\"" + name + "\"," +
-                            "\"role\":" + "\"" + role + "\"," +
-                            "\"team\":" + "\"" + team + "\"}");
-                }
-            }
-            System.out.println("Response: " + data);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return "[" + data + "]";
+        return getAllDataFromFile();
+        //return getAllDataFromDB();
     }
 
     private void addPlayer(String name, String role) {
         try {
-            PlayerDAO playerDAO = new PlayerDAO();
-            playerDAO.insertPlayer(name, role, " ");
+            addPlayerToFile(name, role);
+            //addPlayerToDB(name, role);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -91,4 +61,90 @@ public class Resource {
         return datafile.createNewFile();
     }
 
+
+    private void addPlayerToFile(String name, String role) throws Exception {
+        if (init()) {
+            //do nothing...
+        } else {
+            Writer writer = new BufferedWriter(new OutputStreamWriter(
+                    new FileOutputStream(DATAFILE, true), "UTF-8"));
+            role = role.replace(",", " ");
+            writer.append(name + "," + role + "\n");
+            writer.flush();
+            writer.close();
+        }
+
+    }
+
+    private String getAllDataFromFile() {
+        String line = "";
+        String cvsSplitBy = ",";
+        String data = new String("");
+        try {
+            if (init()) {
+                //do nothing...
+            } else {
+                int counter = 1;
+                BufferedReader br = new BufferedReader(new FileReader(DATAFILE));
+                while ((line = br.readLine()) != null) {
+                    // use comma as separator
+                    String[] read = line.split(cvsSplitBy);
+                    if ("".equalsIgnoreCase(data)) {
+                        data = data + "{" +
+                                "\"id\":" + "\"" + counter++ + "\"," +
+                                "\"name\":" + "\"" + read[0] + "\"," +
+                                "\"role\":" + "\"" + read[1] + "\"," +
+                                "\"team\":" + "\"" + " " + "\"}";
+                    } else {
+                        data = data + ",{" +
+                                "\"id\":" + "\"" + counter++ + "\"," +
+                                "\"name\":" + "\"" + read[0] + "\"," +
+                                "\"role\":" + "\"" + read[1] + "\"," +
+                                "\"team\":" + "\"" + " " + "\"}";
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Response: " + data);
+        return "[" + data + "]";
+    }
+
+    private void addPlayerToDB(String name, String role) throws Exception {
+        PlayerDAO playerDAO = new PlayerDAO();
+        playerDAO.insertPlayer(name, role, " ");
+
+    }
+
+    private String getAllDataFromDB() {
+        StringBuilder data = new StringBuilder("");
+        int counter = 1;
+        PlayerDAO playerDAO = new PlayerDAO();
+        List<Map<String, String>> playersList = playerDAO.getAllPlayers();
+        for (Map<String, String> playerDetailsMap : playersList) {
+
+            String name = playerDetailsMap.get("NAME");
+            String role = playerDetailsMap.get("SKILL");
+            String team = playerDetailsMap.get("TEAM");
+
+            if ((data.length() <= 0)) {
+                data = data.append("{" +
+                        "\"id\":" + "\"" + counter++ + "\"," +
+                        "\"name\":" + "\"" + name + "\"," +
+                        "\"role\":" + "\"" + role + "\"," +
+                        "\"team\":" + "\"" + team + "\"}");
+            } else {
+                data = data.append(",{" +
+                        "\"id\":" + "\"" + counter++ + "\"," +
+                        "\"name\":" + "\"" + name + "\"," +
+                        "\"role\":" + "\"" + role + "\"," +
+                        "\"team\":" + "\"" + team + "\"}");
+            }
+        }
+
+        System.out.println("Response: " + data);
+        return "[" + data + "]";
+    }
 }

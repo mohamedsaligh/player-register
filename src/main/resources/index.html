@@ -72,7 +72,8 @@
 								jsonp: false,
 								jsonpCallback: "receive",
 								dataType: 'jsonp',
-								url: "https://copi2team.herokuapp.com/api/home/players/getAll?callback=receive",
+								//url: "https://copi2team.herokuapp.com/api/home/players/getAll?callback=receive",
+								url: "http://localhost:8080/api/home/players/getAll?callback=receive",
 								async: false,
 								// context: document.body,
 								success: function(data){
@@ -95,7 +96,8 @@
 							$.ajax({
 								 type: "GET",
 								 dataType: 'jsonp',
-								 url: "https://copi2team.herokuapp.com/api/home/hello/" + name,
+								 //url: "https://copi2team.herokuapp.com/api/home/hello/" + name,
+								 url: "http://localhost:8080/api/home/hello/" + name,
 								 success: function(data) {
 											var converter = new Markdown.Converter();
 											$("#preview").html(converter.makeHtml(data));

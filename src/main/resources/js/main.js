@@ -107,11 +107,14 @@ jQuery(document).ready(function($){
 		}
 
 		if (valid) {
-			$.post('https://copi2team.herokuapp.com/api/home/player/register', $("#player-registration").serialize(), function () {
+			//$.post('https://copi2team.herokuapp.com/api/home/player/register',
+			$.post('http://localhost:8080/api/home/player/register',
+			    $("#player-registration").serialize(), function () {
 				// $("#register-status").innerHTML(data);
 				//alert("Success!");
 			});
-			window.location.href = "https://copi2team.herokuapp.com/";
+			//window.location.href = "https://copi2team.herokuapp.com/";
+			window.location.href = "http://localhost:8080/";
 		}
 	});
 

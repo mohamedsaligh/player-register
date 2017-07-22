@@ -50,16 +50,22 @@ public class App {
         server.setHandler(handlers);
         server.start();
 
+        String sql = "CREATE TABLE PLAYER_INFO " +
+                "(NAME TEXT PRIMARY KEY     NOT NULL," +
+                " SKILL            TEXT     NOT NULL, " +
+                " TEAM        CHAR(50))";
+        System.out.println(sql);
+
         //DBConnection
-        Connection dbConn = null;
-        try {
-            System.out.println("Going to get DB Connection...");
-            dbConn = DBConnection.getConnection();
-        } finally {
-            DBConnection.closeResources(null, null, dbConn);
-        }
-        PlayerDAO playerDAO = new PlayerDAO();
-        playerDAO.checkAllTables(null);
+//        Connection dbConn = null;
+//        try {
+//            System.out.println("Going to get DB Connection...");
+//            dbConn = DBConnection.getConnection();
+//        } finally {
+//            DBConnection.closeResources(null, null, dbConn);
+//        }
+//        PlayerDAO playerDAO = new PlayerDAO();
+//        playerDAO.checkAllTables(null);
 //        playerDAO.createPlayerTable();
 
         try {
