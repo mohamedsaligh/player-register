@@ -35,65 +35,41 @@ public class Resource {
     @Path("/player/register")
     @Produces(MediaType.TEXT_HTML)
     public void postMethod(@FormParam("name") String name,
-                             @FormParam("role") String role) {
-        System.out.println("REGISTRATION: name = " + name  + ", role = " + role);
+                           @FormParam("role") String role) {
+        System.out.println("REGISTRATION: name = " + name + ", role = " + role);
         name = name.replace(",", " ");
         addPlayer(name, role);
     }
 
 
     private String getAllData() {
-        String line = "";
-        String cvsSplitBy = ",";
         StringBuilder data = new StringBuilder("");
         try {
-//            if (init()) {
-//
-//            } else {
-                int counter = 1;
-//                BufferedReader br = new BufferedReader(new FileReader(DATAFILE));
-//                while ((line = br.readLine()) != null) {
-//                    // use comma as separator
-//                    String[] read = line.split(cvsSplitBy);
-//                    if ("".equalsIgnoreCase(data)) {
-//                        data = data + "{" +
-//                                "\"id\":" + "\"" + counter++ +"\"," +
-//                                "\"name\":" + "\"" + read[0] +"\"," +
-//                                "\"role\":" + "\"" + read[1] +"\"," +
-//                                "\"team\":" + "\"" + " " +"\"}";
-//                    } else {
-//                        data = data + ",{" +
-//                                "\"id\":" + "\"" + counter++ +"\"," +
-//                                "\"name\":" + "\"" + read[0] +"\"," +
-//                                "\"role\":" + "\"" + read[1] +"\"," +
-//                                "\"team\":" + "\"" + " " +"\"}";
-//                    }
-//                }
 
-                PlayerDAO playerDAO = new PlayerDAO();
-                List<Map<String, String>> playersList = playerDAO.getAllPlayers();
-                for (Map<String, String> playerDetailsMap : playersList) {
+            int counter = 1;
+            PlayerDAO playerDAO = new PlayerDAO();
+            List<Map<String, String>> playersList = playerDAO.getAllPlayers();
+            for (Map<String, String> playerDetailsMap : playersList) {
 
-                    String name = playerDetailsMap.get("NAME");
-                    String role = playerDetailsMap.get("SKILL");
-                    String team = playerDetailsMap.get("TEAM");
+                String name = playerDetailsMap.get("NAME");
+                String role = playerDetailsMap.get("SKILL");
+                String team = playerDetailsMap.get("TEAM");
 
-                    if ((data.length() <= 0)) {
-                        data = data.append("{" +
-                                "\"id\":" + "\"" + counter++ +"\"," +
-                                "\"name\":" + "\"" + name +"\"," +
-                                "\"role\":" + "\"" + role +"\"," +
-                                "\"team\":" + "\"" + team +"\"}");
-                    } else {
-                        data = data.append(",{" +
-                                "\"id\":" + "\"" + counter++ +"\"," +
-                                "\"name\":" + "\"" + name +"\"," +
-                                "\"role\":" + "\"" + role +"\"," +
-                                "\"team\":" + "\"" + team +"\"}");
-                    }
+                if ((data.length() <= 0)) {
+                    data = data.append("{" +
+                            "\"id\":" + "\"" + counter++ + "\"," +
+                            "\"name\":" + "\"" + name + "\"," +
+                            "\"role\":" + "\"" + role + "\"," +
+                            "\"team\":" + "\"" + team + "\"}");
+                } else {
+                    data = data.append(",{" +
+                            "\"id\":" + "\"" + counter++ + "\"," +
+                            "\"name\":" + "\"" + name + "\"," +
+                            "\"role\":" + "\"" + role + "\"," +
+                            "\"team\":" + "\"" + team + "\"}");
                 }
-                System.out.println("Response: " + data );
-//            }
+            }
+            System.out.println("Response: " + data);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -103,19 +79,8 @@ public class Resource {
 
     private void addPlayer(String name, String role) {
         try {
-//            if (init()) {
-//
-//            } else {
-//                Writer writer = new BufferedWriter(new OutputStreamWriter(
-//                        new FileOutputStream(DATAFILE, true), "UTF-8"));
-//                role = role.replace(",", " ");
-//                writer.append(name + "," + role + "\n");
-
-                PlayerDAO playerDAO = new PlayerDAO();
-                playerDAO.insertPlayer(name, role, " ");
-//                writer.flush();
-//                writer.close();
-//            }
+            PlayerDAO playerDAO = new PlayerDAO();
+            playerDAO.insertPlayer(name, role, " ");
         } catch (Exception ex) {
             ex.printStackTrace();
         }

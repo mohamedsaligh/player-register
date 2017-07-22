@@ -6,7 +6,7 @@ import java.sql.*;
 
 /**
  * Created by saligh on 17/4/17.
- *  
+ *
  */
 public class DBConnection {
 
@@ -28,24 +28,17 @@ public class DBConnection {
     public static void closeResources(ResultSet rs, Statement stmt, Connection con) {
 
         try {
-            if (rs != null) {
-
-                rs.close();
-            }
+            if (rs != null) rs.close();
         } catch(Exception ex) {
             System.err.println("Exception in closing ResultSet: " + ex);
         }
         try {
-            if (stmt != null) {
-
-                stmt.close();
-            }
+            if (stmt != null) stmt.close();
         } catch(Exception ex) {
             System.err.println("Exception in closing Statement: " + ex);
         }
         try {
             if (con != null && !con.isClosed()) {
-
                 con.close();
             }
         } catch(Exception ex) {
